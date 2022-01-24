@@ -12,6 +12,20 @@ const hiragana = {
     n: { n: "ん", },
 };
 
+const katakana = {
+    A: { A: "ア", I: "イ", U: "ウ", E: "エ", O: "オ", },
+    KA: { KA: "カ", KI: "キ", KU: "ク", KE: "ケ", KO: "コ", },
+    SA: { SA: "サ", SHI: "シ", SU: "ス", SE: "セ", SO: "ソ", },
+    TA: { TA: "タ", CHI: "チ", TSU: "ツ", TE: "テ", TO: "ト", },
+    NA: { NA: "ナ", NI: "ニ", NU: "ヌ", NE: "ネ", NO: "ノ", },
+    HA: { HA: "ハ", HI: "ヒ", FU: "フ", HE: "ヘ", HO: "ホ", },
+    MA: { MA: "マ", MI: "ミ", MU: "ム", ME: "メ", MO: "モ", },
+    YA: { YA: "ヤ", YU: "ユ", YO: "ヨ", },
+    RA: { RA: "ラ", RI: "リ", RU: "ル", RE: "レ", RO: "ロ", },
+    WA: { WA: "ワ", WI: "ヰ", WE: "ヱ", WO: "ヲ", },
+    N: { N: "ン", },
+};
+
 const currentList = {};
 
 let right = 0;
@@ -36,7 +50,8 @@ start();
 function onButtonClick(cb) {
     const id = cb.id;
     if (currentList[id]) return delete currentList[id];
-    currentList[id] = hiragana[id];
+    const kanaList = id == id.toLowerCase() ? hiragana : katakana;
+    currentList[id] = kanaList[id];
 }
 
 function onSubmit() {

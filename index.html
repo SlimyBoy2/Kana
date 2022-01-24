@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hiragana</title>
+    <title>Kana</title>
     <link rel="stylesheet" href="styles.css">
     <script async src="script.js"></script>
 </head>
 
 <body>
-
     <div class="boxes">
         <input type="checkbox" id="a" class="box" onclick="onButtonClick(this);">
         <label for="a"> a</label>
@@ -37,9 +36,6 @@
         <input type="checkbox" id="ya" class="box" onclick="onButtonClick(this);">
         <label for="ya"> ya</label>
 
-        <input type="checkbox" id="wa" class="box" onclick="onButtonClick(this);">
-        <label for="wa"> wa</label>
-
         <input type="checkbox" id="ra" class="box" onclick="onButtonClick(this);">
         <label for="ra"> ra</label>
 
@@ -50,6 +46,41 @@
         <label for="n"> n</label>
     </div>
 
+    <div class="boxes">
+        <input type="checkbox" id="A" class="box" onclick="onButtonClick(this);">
+        <label for="A"> A</label>
+
+        <input type="checkbox" id="KA" class="box" onclick="onButtonClick(this);">
+        <label for="KA"> KA</label>
+
+        <input type="checkbox" id="SA" class="box" onclick="onButtonClick(this);">
+        <label for="SA"> SA</label>
+
+        <input type="checkbox" id="TA" class="box" onclick="onButtonClick(this);">
+        <label for="TA"> TA</label>
+
+        <input type="checkbox" id="NA" class="box" onclick="onButtonClick(this);">
+        <label for="NA"> NA</label>
+
+        <input type="checkbox" id="HA" class="box" onclick="onButtonClick(this);">
+        <label for="HA"> HA</label>
+
+        <input type="checkbox" id="MA" class="box" onclick="onButtonClick(this);">
+        <label for="MA"> MA</label>
+
+        <input type="checkbox" id="YA" class="box" onclick="onButtonClick(this);">
+        <label for="YA"> YA</label>
+
+        <input type="checkbox" id="RA" class="box" onclick="onButtonClick(this);">
+        <label for="RA"> RA</label>
+
+        <input type="checkbox" id="WA" class="box" onclick="onButtonClick(this);">
+        <label for="WA"> WA</label>
+
+        <input type="checkbox" id="N" class="box" onclick=" onButtonClick(this);">
+        <label for="N"> N</label>
+    </div>
+
     <br>
     <br>
 
@@ -58,7 +89,7 @@
     </div>
 
     <div class="input">
-        <input type="text" id="input" placeholder="Entrez le son de ce kana" onsubmit="console.log('hello')">
+        <input type="text" id="input" placeholder="Entrez le son de ce kana">
         <input type="submit" value="Valider" onclick="onSubmit(this);" onsubmit="onSubmit(this);">
     </div>
 

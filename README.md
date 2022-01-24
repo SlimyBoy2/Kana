@@ -1,2 +1,2 @@
 # Kana
-Générateur aléatoire d'Hiragana へへ
+Générateur aléatoire de kana へへ
