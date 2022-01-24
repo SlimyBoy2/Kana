@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiragana</title>
+    <link rel="stylesheet" href="styles.css">
+    <script async src="script.js"></script>
+</head>
+
+<body>
+
+    <div class="boxes">
+        <input type="checkbox" id="a" class="box" onclick="onButtonClick(this);">
+        <label for="a"> a</label>
+
+        <input type="checkbox" id="ka" class="box" onclick="onButtonClick(this);">
+        <label for="ka"> ka</label>
+
+        <input type="checkbox" id="sa" class="box" onclick="onButtonClick(this);">
+        <label for="sa"> sa</label>
+
+        <input type="checkbox" id="ta" class="box" onclick="onButtonClick(this);">
+        <label for="ta"> ta</label>
+
+        <input type="checkbox" id="na" class="box" onclick="onButtonClick(this);">
+        <label for="na"> na</label>
+
+        <input type="checkbox" id="ha" class="box" onclick="onButtonClick(this);">
+        <label for="ha"> ha</label>
+
+        <input type="checkbox" id="ma" class="box" onclick="onButtonClick(this);">
+        <label for="ma"> ma</label>
+
+        <input type="checkbox" id="ya" class="box" onclick="onButtonClick(this);">
+        <label for="ya"> ya</label>
+
+        <input type="checkbox" id="wa" class="box" onclick="onButtonClick(this);">
+        <label for="wa"> wa</label>
+
+        <input type="checkbox" id="ra" class="box" onclick="onButtonClick(this);">
+        <label for="ra"> ra</label>
+
+        <input type="checkbox" id="wa" class="box" onclick="onButtonClick(this);">
+        <label for="wa"> wa</label>
+
+        <input type="checkbox" id="n" class="box" onclick=" onButtonClick(this);">
+        <label for="n"> n</label>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="kana" id="kana">
+        <!--random kana-->
+    </div>
+
+    <div class="input">
+        <input type="text" id="input" placeholder="Entrez le son de ce kana" onsubmit="console.log('hello')">
+        <input type="submit" value="Valider" onclick="onSubmit(this);" onsubmit="onSubmit(this);">
+    </div>
+
+    <div class="score"></div>
+
+</body>
+
+</html>
