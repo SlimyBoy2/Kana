@@ -22,11 +22,17 @@ const katakana = {
     MA: { MA: "マ", MI: "ミ", MU: "ム", ME: "メ", MO: "モ", },
     YA: { YA: "ヤ", YU: "ユ", YO: "ヨ", },
     RA: { RA: "ラ", RI: "リ", RU: "ル", RE: "レ", RO: "ロ", },
-    WA: { WA: "ワ", WI: "ヰ", WE: "ヱ", WO: "ヲ", },
+    WA: { WA: "ワ", WO: "ヲ", },
     N: { N: "ン", },
 };
 
-const currentList = {};
+let currentList = (() => {
+    const list = JSON.parse(localStorage.getItem("list"));
+    if (!list || typeof list != "object") return {};
+    return list;
+})();
+
+checkAllBoxes();
 
 let right = 0;
 let wrong = 0;
@@ -49,9 +55,9 @@ start();
 
 function onButtonClick(cb) {
     const id = cb.id;
-    if (currentList[id]) return delete currentList[id];
+    if (currentList[id]) return removeFromList(id);
     const kanaList = id == id.toLowerCase() ? hiragana : katakana;
-    currentList[id] = kanaList[id];
+    addToList(id, kanaList[id]);
 }
 
 function onSubmit() {
@@ -94,11 +100,61 @@ function getRandomNumber(len) {
 
 function checkStart() {
     const boxes = document.getElementsByClassName("box");
+    const list = {};
+    let checked = false;
+
     for (let i = 0; i < boxes.length; i++) {
         const element = boxes[i];
-        if (element.checked) return;
+        const id = element.id;
+        if (element.checked) {
+            list[id] = (id == id.toLowerCase() ? hiragana : katakana)[id];
+            if (!checked) checked = true;
+        }
     }
 
-    boxes[0].checked = true;
-    currentList.a = hiragana.a;
+    currentList = list;
+
+    if (!checked) {
+        boxes[0].checked = true;
+        return addToList("a", hiragana.a);
+    }
+
+    if (localStorage.getItem("list") != JSON.stringify(currentList)) setItem();
+}
+
+function addToList(id, kana) {
+    currentList[id] = kana;
+    setItem();
+}
+
+function removeFromList(id) {
+    delete currentList[id];
+    setItem();
+}
+
+function setItem(i = 1) {
+    if (i == 5) return;
+    try {
+        localStorage.setItem("list", JSON.stringify(currentList));
+    } catch (error) {
+        localStorage.clear();
+        setItem(i++);
+    }
+}
+
+function checkAllBoxes() {
+    const boxes = document.getElementsByClassName("box");
+
+    for (const box of boxes) {
+        box.checked = !!currentList[box.id];
+    }
+}
+
+function reset() {
+    localStorage.clear();
+    currentList = {};
+    right = 0;
+    wrong = 0;
+    checkAllBoxes();
+    start();
 }
