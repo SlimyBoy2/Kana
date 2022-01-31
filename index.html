@@ -89,8 +89,11 @@
     </div>
 
     <div class="input">
-        <input type="text" id="input" placeholder="Entrez le son de ce kana">
-        <input type="submit" value="Valider" onclick="onSubmit(this);" onsubmit="onSubmit(this);">
+        <form onsubmit="onSubmit();" autocomplete="off">
+            <input type="text" id="input" placeholder="Entrez le son de ce kana">
+        </form>
+
+        <input type="submit" value="Valider" onclick="onSubmit();">
     </div>
 
     <!--C'est pas fou de mettre un reset là dessus mais bon pas grave-->

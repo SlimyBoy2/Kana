@@ -26,6 +26,12 @@ const katakana = {
     N: { N: "ン", },
 };
 
+let right = 0;
+let wrong = 0;
+
+let last;
+let current;
+
 let currentList = (() => {
     const list = JSON.parse(localStorage.getItem("list"));
     if (!list || typeof list != "object") return {};
@@ -34,11 +40,7 @@ let currentList = (() => {
 
 checkAllBoxes();
 
-let right = 0;
-let wrong = 0;
-
-let last;
-let current;
+start();
 
 function start() {
 
@@ -51,27 +53,57 @@ function start() {
     document.getElementById("input").value = "";
 }
 
-start();
-
-function onButtonClick(cb) {
-    const id = cb.id;
+function onButtonClick(box) {
+    const id = box.id;
     if (currentList[id]) return removeFromList(id);
     const kanaList = id == id.toLowerCase() ? hiragana : katakana;
     addToList(id, kanaList[id]);
 }
 
 function onSubmit() {
-    const input = document.getElementById("input").value;
-    if (!input) return; // No input was given
 
-    if (input == current[0]) right++;
-    else {
-        // TODO: Check if the input was a real one or if it was a typo
-        alert(`La réponse était: ${current[0]}`);
-        wrong++;
+    const input = (() => {
+        const rawInput = document.getElementById("input").value;
+        if (!rawInput || typeof rawInput != "string") return null;
+
+        // Si c'est un hiragana, on met son input en minuscule, sinon en majuscule
+        if (current[0] == current[0].toLowerCase()) return rawInput.toLowerCase();
+        return rawInput.toUpperCase();
+    })();
+
+    if (!input) return;
+
+    if (input == current[0]) {
+        right++;
+        return start();
     }
 
+    const goodKana = isValidInput(input);
+    if (!goodKana) return alert("Le son donné n'est pas valide");
+
+    console.log(goodKana);
+    alert(`La réponse était: ${current[0]}\nLe son ${input} correspond à ${goodKana}`);
+    wrong++;
+
     start();
+}
+
+function isValidInput(input) {
+
+    // C'est pas ouf mais ça fonctionne
+    const category = (() => {
+        const char = input.charAt(0).toLowerCase();
+
+        if (input.length == 1) return char == "n" ? "n" : "a";
+
+        if (char == "c") return "ta";
+        if (char == "f") return "ha";
+
+        return `${char}a`;
+
+    })()[current[0] == current[0].toLowerCase() ? "toLowerCase" : "toUpperCase"]();
+
+    return currentList[category]?.[input];
 }
 
 function getRandomKana() {
