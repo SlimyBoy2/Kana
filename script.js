@@ -1,29 +1,29 @@
 const hiragana = {
-    a: { a: "あ", i: "い", u: "う", e: "え", o: "お", },
-    ka: { ka: "か", ki: "き", ku: "く", ke: "け", ko: "こ", },
-    sa: { sa: "さ", shi: "し", su: "す", se: "せ", so: "そ", },
-    ta: { ta: "た", chi: "ち", tsu: "つ", te: "て", to: "と", },
-    na: { na: "な", ni: "に", nu: "ぬ", ne: "ね", no: "の", },
-    ha: { ha: "は", hi: "ひ", fu: "ふ", he: "へ", ho: "ほ", },
-    ma: { ma: "ま", mi: "み", mu: "む", me: "め", mo: "も", },
-    ya: { ya: "や", yu: "ゆ", yo: "よ", },
-    ra: { ra: "ら", ri: "り", ru: "る", re: "れ", ro: "ろ", },
-    wa: { wa: "わ", wo: "を", },
-    n: { n: "ん", },
+    a: { a: "あ", i: "い", u: "う", e: "え", o: "お" },
+    ka: { ka: [["ka", "か"], ["ga", "が"]], ki: [["ki", "き"], ["gi", "ぎ"]], ku: [["ku", "く"], ["gu", "ぐ"]], ke: [["ke", "け"], ["ge", "げ"]], ko: [["ko", "こ"], ["go", "ご"]] },
+    sa: { sa: [["sa", "さ"], ["za", "ざ"]], shi: [["shi", "し"], ["ji", "じ"]], su: [["su", "す"], ["zu", "ず"]], se: [["se", "せ"], ["ze", "ぜ"]], so: [["so", "そ"], ["zo", "ぞ"]] },
+    ta: { ta: [["ta", "た"], ["da", "だ"]], chi: [["chi", "ち"], ["ji", "ぢ"]], tsu: [["tsu", "つ"], ["zu", "づ"]], te: [["te", "て"], ["de", "で"]], to: [["to", "と"], ["do", "ど"]] },
+    na: { na: "な", ni: "に", nu: "ぬ", ne: "ね", no: "の" },
+    ha: { ha: [["ha", "は"], ["ba", "ば"], ["pa", "ぱ"]], hi: [["hi", "ひ"], ["bi", "び"], ["pi", "ぴ"]], fu: [["fu", "ふ"], ["bu", "ぶ"], ["pu", "ぷ"]], he: [["he", "へ"], ["be", "べ"], ["pe", "ぺ"]], ho: [["ho", "ほ"], ["bo", "ぼ"], ["po", "ぽ"]] },
+    ma: { ma: "ま", mi: "み", mu: "む", me: "め", mo: "も" },
+    ya: { ya: "や", yu: "ゆ", yo: "よ" },
+    ra: { ra: "ら", ri: "り", ru: "る", re: "れ", ro: "ろ" },
+    wa: { wa: "わ", wo: "を" },
+    n: { n: "ん" },
 };
 
 const katakana = {
-    A: { A: "ア", I: "イ", U: "ウ", E: "エ", O: "オ", },
-    KA: { KA: "カ", KI: "キ", KU: "ク", KE: "ケ", KO: "コ", },
-    SA: { SA: "サ", SHI: "シ", SU: "ス", SE: "セ", SO: "ソ", },
-    TA: { TA: "タ", CHI: "チ", TSU: "ツ", TE: "テ", TO: "ト", },
-    NA: { NA: "ナ", NI: "ニ", NU: "ヌ", NE: "ネ", NO: "ノ", },
-    HA: { HA: "ハ", HI: "ヒ", FU: "フ", HE: "ヘ", HO: "ホ", },
-    MA: { MA: "マ", MI: "ミ", MU: "ム", ME: "メ", MO: "モ", },
-    YA: { YA: "ヤ", YU: "ユ", YO: "ヨ", },
-    RA: { RA: "ラ", RI: "リ", RU: "ル", RE: "レ", RO: "ロ", },
-    WA: { WA: "ワ", WO: "ヲ", },
-    N: { N: "ン", },
+    A: { A: "ア", I: "イ", U: "ウ", E: "エ", O: "オ" },
+    KA: { KA: [["KA", "カ"], ["GA", "ガ"]], KI: [["KI", "キ"], ["GI", "ギ"]], KU: [["KU", "ク"], ["GU", "グ"]], KE: [["KE", "ケ"], ["GE", "ゲ"]], KO: [["KO", "コ"], ["GO", "ゴ"]] },
+    SA: { SA: [["SA", "サ"], ["ZA", "ザ"],], SHI: [["SHI", "シ"], ["JI", "ジ"],], SU: [["SU", "ス"], ["ZU", "ズ"],], SE: [["SE", "セ"], ["ZE", "ゼ"],], SO: [["SO", "ソ"], ["ZO", "ゾ"],] },
+    TA: { TA: [["TA", "タ"], ["DA", "ダ"]], CHI: [["CHI", "チ"], ["JI", "ヂ"]], TSU: [["TSU", "ツ"], ["JU", "ヅ"]], TE: [["TE", "テ"], ["DE", "デ"]], TO: [["TO", "ト"], ["DO", "ド"]] },
+    NA: { NA: "ナ", NI: "ニ", NU: "ヌ", NE: "ネ", NO: "ノ" },
+    HA: { HA: [["HA", "ハ"], ["BA", "バ"], ["PA", "パ"]], HI: [["HI", "ヒ"], ["BI", "ビ"], ["PI", "ピ"]], FU: [["FU", "フ"], ["BU", "ブ"], ["PU", "プ"]], HE: [["HE", "ヘ"], ["BE", "ベ"], ["PE", "ペ"]], HO: [["HO", "ホ"], ["BO", "ボ"], ["PO", "ポ"]] },
+    MA: { MA: "マ", MI: "ミ", MU: "ム", ME: "メ", MO: "モ" },
+    YA: { YA: "ヤ", YU: "ユ", YO: "ヨ" },
+    RA: { RA: "ラ", RI: "リ", RU: "ル", RE: "レ", RO: "ロ" },
+    WA: { WA: "ワ", WO: "ヲ" },
+    N: { N: "ン" },
 };
 
 let right = 0;
@@ -37,6 +37,8 @@ let currentList = (() => {
     if (!list || typeof list != "object") return {};
     return list;
 })();
+
+let useAccents = JSON.parse(localStorage.getItem("accents")) ?? false;
 
 checkAllBoxes();
 
@@ -55,8 +57,16 @@ function start() {
 
 function onButtonClick(box) {
     const id = box.id;
+
+    if (id == "Accents") {
+        useAccents = !useAccents;
+        setItem(2);
+        return;
+    }
+
     if (currentList[id]) return removeFromList(id);
-    const kanaList = id == id.toLowerCase() ? hiragana : katakana;
+    const kanaList = getKanaList(id);
+
     addToList(id, kanaList[id]);
 }
 
@@ -78,11 +88,10 @@ function onSubmit() {
         return start();
     }
 
-    const goodKana = isValidInput(input);
-    if (!goodKana) return alert("Le son donné n'est pas valide");
+    const goodKanas = isValidInput(input);
+    if (!goodKanas) return alert("Le son donné n'est pas valide");
 
-    console.log(goodKana);
-    alert(`La réponse était: ${current[0]}\nLe son ${input} correspond à ${goodKana}`);
+    alert(`La réponse était: ${current[0]}\nLe son ${input} correspond à ${goodKanas.join(" | ")}`);
     wrong++;
 
     start();
@@ -90,20 +99,29 @@ function onSubmit() {
 
 function isValidInput(input) {
 
-    // C'est pas ouf mais ça fonctionne
-    const category = (() => {
-        const char = input.charAt(0).toLowerCase();
+    const kanaList = getKanaList(input);
 
-        if (input.length == 1) return char == "n" ? "n" : "a";
+    const goodKanas = [];
 
-        if (char == "c") return "ta";
-        if (char == "f") return "ha";
+    // Check toutes les entrées de la liste et donner les kana valides pour le son donné
 
-        return `${char}a`;
+    for (const [, listOfKana] of Object.entries(kanaList)) {
+        for (const kana of Object.entries(listOfKana)) {
 
-    })()[current[0] == current[0].toLowerCase() ? "toLowerCase" : "toUpperCase"]();
+            if (typeof kana[1] == "string") {
+                if (kana[0] == input) goodKanas.push(kana[1]);
+                continue;
+            }
 
-    return currentList[category]?.[input];
+            for (const kanaWithAccent of kana[1]) {
+                if (kanaWithAccent[0] == input) goodKanas.push(kanaWithAccent[1]);
+            }
+        }
+    }
+
+    if (!goodKanas.length) return null;
+
+    return goodKanas;
 }
 
 function getRandomKana() {
@@ -111,10 +129,26 @@ function getRandomKana() {
 
     for (const [, listOfKana] of Object.entries(currentList)) {
         for (const kana of Object.entries(listOfKana)) {
-            list.push(kana);
+
+
+            if (typeof kana[1] == "string") {
+                list.push(kana);
+                continue;
+            }
+
+            // Ne pas mettre les accents s'ils ne sont pas cochés
+            if (!useAccents) {
+                list.push(kana[1][0]);
+                continue;
+            }
+
+            // [["ka", "か"], ["ga", "が"]]
+
+            for (const kanaWithAccent of kana[1]) {
+                list.push(kanaWithAccent);
+            }
         }
     }
-
 
     const num = getRandomNumber(list.length);
     const data = list[num]; // ["a", "あ"]
@@ -138,10 +172,11 @@ function checkStart() {
     for (let i = 0; i < boxes.length; i++) {
         const element = boxes[i];
         const id = element.id;
-        if (element.checked) {
-            list[id] = (id == id.toLowerCase() ? hiragana : katakana)[id];
-            if (!checked) checked = true;
-        }
+
+        if (!element.checked || id == "Accents") continue;
+
+        list[id] = getKanaList(id)[id];
+        if (!checked) checked = true;
     }
 
     currentList = list;
@@ -164,13 +199,18 @@ function removeFromList(id) {
     setItem();
 }
 
-function setItem(i = 1) {
-    if (i == 5) return;
+/**
+ * tout - les deux
+ * 1 - list
+ * 2 - accents
+ */
+function setItem(type = 0) {
     try {
-        localStorage.setItem("list", JSON.stringify(currentList));
+        if (type == 0 || type == 1) localStorage.setItem("list", JSON.stringify(currentList));
+        if (type == 0 || type == 2) localStorage.setItem("accents", useAccents);
     } catch (error) {
         localStorage.clear();
-        setItem(i++);
+        alert("Impossible de sauvegarder");
     }
 }
 
@@ -178,6 +218,12 @@ function checkAllBoxes() {
     const boxes = document.getElementsByClassName("box");
 
     for (const box of boxes) {
+
+        if (box.id == "Accents") {
+            box.checked = useAccents;
+            continue;
+        }
+
         box.checked = !!currentList[box.id];
     }
 }
@@ -189,4 +235,8 @@ function reset() {
     wrong = 0;
     checkAllBoxes();
     start();
+}
+
+function getKanaList(sound) {
+    return sound == sound.toLowerCase() ? hiragana : katakana;
 }
