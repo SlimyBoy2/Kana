@@ -1,29 +1,29 @@
 const hiragana = {
-    a: { a: "あ", i: "い", u: "う", e: "え", o: "お" },
+    a: { a: [["a", "あ"]], i: [["i", "い"]], u: [["u", "う"]], e: [["e", "え"]], o: [["o", "お"]] },
     ka: { ka: [["ka", "か"], ["ga", "が"]], ki: [["ki", "き"], ["gi", "ぎ"]], ku: [["ku", "く"], ["gu", "ぐ"]], ke: [["ke", "け"], ["ge", "げ"]], ko: [["ko", "こ"], ["go", "ご"]] },
     sa: { sa: [["sa", "さ"], ["za", "ざ"]], shi: [["shi", "し"], ["ji", "じ"]], su: [["su", "す"], ["zu", "ず"]], se: [["se", "せ"], ["ze", "ぜ"]], so: [["so", "そ"], ["zo", "ぞ"]] },
     ta: { ta: [["ta", "た"], ["da", "だ"]], chi: [["chi", "ち"], ["ji", "ぢ"]], tsu: [["tsu", "つ"], ["zu", "づ"]], te: [["te", "て"], ["de", "で"]], to: [["to", "と"], ["do", "ど"]] },
-    na: { na: "な", ni: "に", nu: "ぬ", ne: "ね", no: "の" },
+    na: { na: [["na", "な"]], ni: [["ni", "に"]], nu: [["nu", "ぬ"]], ne: [["ne", "ね"]], no: [["no", "の"]] },
     ha: { ha: [["ha", "は"], ["ba", "ば"], ["pa", "ぱ"]], hi: [["hi", "ひ"], ["bi", "び"], ["pi", "ぴ"]], fu: [["fu", "ふ"], ["bu", "ぶ"], ["pu", "ぷ"]], he: [["he", "へ"], ["be", "べ"], ["pe", "ぺ"]], ho: [["ho", "ほ"], ["bo", "ぼ"], ["po", "ぽ"]] },
-    ma: { ma: "ま", mi: "み", mu: "む", me: "め", mo: "も" },
-    ya: { ya: "や", yu: "ゆ", yo: "よ" },
-    ra: { ra: "ら", ri: "り", ru: "る", re: "れ", ro: "ろ" },
-    wa: { wa: "わ", wo: "を" },
-    n: { n: "ん" },
+    ma: { ma: [["ma", "ま"]], mi: [["mi", "み"]], mu: [["mu", "む"]], me: [["me", "め"]], mo: [["mo", "も"]] },
+    ya: { ya: [["ya", "や"]], yu: [["yu", "ゆ"]], yo: [["yo", "よ"]] },
+    ra: { ra: [["ra", "ら"]], ri: [["ri", "り"]], ru: [["ru", "る"]], re: [["re", "れ"]], ro: [["ro", "ろ"]] },
+    wa: { wa: [["wa", "わ"]], wo: [["wo", "を"]] },
+    n: { n: [["n", "ん"]] },
 };
 
 const katakana = {
-    A: { A: "ア", I: "イ", U: "ウ", E: "エ", O: "オ" },
+    A: { A: [["A", "ア"]], I: [["I", "イ"]], U: [["U", "ウ"]], E: [["E", "エ"]], O: [["O", "オ"]] },
     KA: { KA: [["KA", "カ"], ["GA", "ガ"]], KI: [["KI", "キ"], ["GI", "ギ"]], KU: [["KU", "ク"], ["GU", "グ"]], KE: [["KE", "ケ"], ["GE", "ゲ"]], KO: [["KO", "コ"], ["GO", "ゴ"]] },
     SA: { SA: [["SA", "サ"], ["ZA", "ザ"],], SHI: [["SHI", "シ"], ["JI", "ジ"],], SU: [["SU", "ス"], ["ZU", "ズ"],], SE: [["SE", "セ"], ["ZE", "ゼ"],], SO: [["SO", "ソ"], ["ZO", "ゾ"],] },
     TA: { TA: [["TA", "タ"], ["DA", "ダ"]], CHI: [["CHI", "チ"], ["JI", "ヂ"]], TSU: [["TSU", "ツ"], ["JU", "ヅ"]], TE: [["TE", "テ"], ["DE", "デ"]], TO: [["TO", "ト"], ["DO", "ド"]] },
-    NA: { NA: "ナ", NI: "ニ", NU: "ヌ", NE: "ネ", NO: "ノ" },
+    NA: { NA: [["NA", "ナ"]], NI: [["NI", "ニ"]], NU: [["NU", "ヌ"]], NE: [["NE", "ネ"]], NO: [["NO", "ノ"]] },
     HA: { HA: [["HA", "ハ"], ["BA", "バ"], ["PA", "パ"]], HI: [["HI", "ヒ"], ["BI", "ビ"], ["PI", "ピ"]], FU: [["FU", "フ"], ["BU", "ブ"], ["PU", "プ"]], HE: [["HE", "ヘ"], ["BE", "ベ"], ["PE", "ペ"]], HO: [["HO", "ホ"], ["BO", "ボ"], ["PO", "ポ"]] },
-    MA: { MA: "マ", MI: "ミ", MU: "ム", ME: "メ", MO: "モ" },
-    YA: { YA: "ヤ", YU: "ユ", YO: "ヨ" },
-    RA: { RA: "ラ", RI: "リ", RU: "ル", RE: "レ", RO: "ロ" },
-    WA: { WA: "ワ", WO: "ヲ" },
-    N: { N: "ン" },
+    MA: { MA: [["MA", "マ"]], MI: [["MI", "ミ"]], MU: [["MU", "ム"]], ME: [["ME", "メ"]], MO: [["MO", "モ"]] },
+    YA: { YA: [["YA", "ヤ"]], YU: [["YU", "ユ"]], YO: [["YO", "ヨ"]] },
+    RA: { RA: [["RA", "ラ"]], RI: [["RI", "リ"]], RU: [["RU", "ル"]], RE: [["RE", "レ"]], RO: [["RO", "ロ"]] },
+    WA: { WA: [["WA", "ワ"]], WO: [["WO", "ヲ"]] },
+    N: { N: [["N", "ン"]] },
 };
 
 let right = 0;
@@ -50,13 +50,14 @@ function start() {
 
     current = getRandomKana();
     console.log(current);
+
     document.getElementsByClassName("kana")[0].textContent = current[1];
     document.getElementsByClassName("score")[0].textContent = `🟢 ${right} | ${wrong} 🔴`;
     document.getElementById("input").value = "";
 }
 
 function onButtonClick(box) {
-    const id = box.id;
+    const { id } = box;
 
     if (id == "Accents") {
         useAccents = !useAccents;
@@ -89,7 +90,7 @@ function onSubmit() {
     }
 
     const goodKanas = isValidInput(input);
-    if (!goodKanas) return alert("Le son donné n'est pas valide");
+    if (!goodKanas.length) return alert("Le son donné n'est pas valide");
 
     alert(`La réponse était: ${current[0]}\nLe son ${input} correspond à ${goodKanas.join(" | ")}`);
     wrong++;
@@ -99,27 +100,16 @@ function onSubmit() {
 
 function isValidInput(input) {
 
-    const kanaList = getKanaList(input);
-
+    const defaultKanaList = getKanaList(input);
     const goodKanas = [];
 
-    // Check toutes les entrées de la liste et donner les kana valides pour le son donné
-
-    for (const [, listOfKana] of Object.entries(kanaList)) {
-        for (const kana of Object.entries(listOfKana)) {
-
-            if (typeof kana[1] == "string") {
+    for (const [, listOfSounds] of Object.entries(defaultKanaList)) {
+        for (const [, kanaList] of Object.entries(listOfSounds)) {
+            for (const kana of kanaList) {
                 if (kana[0] == input) goodKanas.push(kana[1]);
-                continue;
-            }
-
-            for (const kanaWithAccent of kana[1]) {
-                if (kanaWithAccent[0] == input) goodKanas.push(kanaWithAccent[1]);
             }
         }
     }
-
-    if (!goodKanas.length) return null;
 
     return goodKanas;
 }
@@ -127,25 +117,17 @@ function isValidInput(input) {
 function getRandomKana() {
     const list = [];
 
-    for (const [, listOfKana] of Object.entries(currentList)) {
-        for (const kana of Object.entries(listOfKana)) {
-
-
-            if (typeof kana[1] == "string") {
-                list.push(kana);
-                continue;
-            }
+    for (const [, listOfSounds] of Object.entries(currentList)) {
+        for (const [, kanaList] of Object.entries(listOfSounds)) {
 
             // Ne pas mettre les accents s'ils ne sont pas cochés
             if (!useAccents) {
-                list.push(kana[1][0]);
+                list.push(kanaList[0]);
                 continue;
             }
 
-            // [["ka", "か"], ["ga", "が"]]
-
-            for (const kanaWithAccent of kana[1]) {
-                list.push(kanaWithAccent);
+            for (const kana of kanaList) {
+                list.push(kana);
             }
         }
     }
@@ -158,7 +140,7 @@ function getRandomKana() {
 function getRandomNumber(len) {
     let num = Math.floor(Math.random() * len);
 
-    // Check if len > 1 because of ん
+    // Si seulement ん est coché num sera toujours last
     if (num == last && len > 1) return getRandomNumber(len);
     last = num;
     return num;
@@ -167,21 +149,26 @@ function getRandomNumber(len) {
 function checkStart() {
     const boxes = document.getElementsByClassName("box");
     const list = {};
-    let checked = false;
 
     for (let i = 0; i < boxes.length; i++) {
         const element = boxes[i];
-        const id = element.id;
+        const { id, checked } = element;
 
-        if (!element.checked || id == "Accents") continue;
+        if (id == "Accents") {
+            useAccents = checked;
+            continue;
+        }
+
+        if (!checked) {
+            if (currentList[id]) removeFromList(id);
+            continue;
+        }
 
         list[id] = getKanaList(id)[id];
-        if (!checked) checked = true;
+        if (!currentList[id]) addToList(id, list[id]);
     }
 
-    currentList = list;
-
-    if (!checked) {
+    if (!Object.keys(list).length) {
         boxes[0].checked = true;
         return addToList("a", hiragana.a);
     }
@@ -200,7 +187,7 @@ function removeFromList(id) {
 }
 
 /**
- * tout - les deux
+ * 0 - les deux
  * 1 - list
  * 2 - accents
  */
@@ -214,10 +201,24 @@ function setItem(type = 0) {
     }
 }
 
-function checkAllBoxes() {
+/**
+ * 0 - normal check
+ * 1 - uncheck all
+ * 2 - check all
+ */
+function checkAllBoxes(action = 0) {
     const boxes = document.getElementsByClassName("box");
 
     for (const box of boxes) {
+        if (action == 1) {
+            box.checked = false;
+            continue;
+        }
+
+        if (action == 2) {
+            box.checked = true;
+            continue;
+        }
 
         if (box.id == "Accents") {
             box.checked = useAccents;
@@ -228,12 +229,45 @@ function checkAllBoxes() {
     }
 }
 
+function triggerAction() {
+    const action = prompt(`Quelle action voulez-vous faire ?
+
+0 - Reset le score
+1 - Décocher tout les kana
+2 - Cocher tout les kana
+3 - Reset complet
+`, "3");
+
+    if (action == "0") {
+        right = 0;
+        wrong = 0;
+        return start();
+    }
+
+    if (action == "1") {
+        checkAllBoxes(1);
+        return start();
+    }
+
+    if (action == "2") {
+        checkAllBoxes(2);
+        return start();
+    }
+
+    if (action == "3") {
+        return reset();
+    }
+
+}
+
 function reset() {
+    const doReset = confirm("Êtes-vous sûr de vouloir réinitialiser ?");
+    if (!doReset) return;
+
     localStorage.clear();
-    currentList = {};
     right = 0;
     wrong = 0;
-    checkAllBoxes();
+    checkAllBoxes(1);
     start();
 }
 
